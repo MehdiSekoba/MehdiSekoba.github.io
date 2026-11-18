@@ -1,67 +1,92 @@
 [
   {
     "name": "AnimatedBottomBar",
-    "description": "Modern Jetpack Compose bottom navigation with a floating curved indicator, smooth transitions, badges and deep customization.",
+    "full_name": "MehdiSekoba/AnimatedBottomBar",
+    "description": "A customizable animated bottom navigation bar for Jetpack Compose with smooth floating curved indicator animations.",
     "url": "https://github.com/MehdiSekoba/AnimatedBottomBar",
     "image": "https://raw.githubusercontent.com/MehdiSekoba/AnimatedBottomBar/main/ui.gif",
     "language": "Kotlin",
     "topics": [
-      "android",
-      "kotlin",
-      "jetpack-compose"
+      "bottom-navigation",
+      "compose-ui",
+      "material3-compose-ui",
+      "animation",
+      "bottombar"
     ],
-    "stars": null
+    "stars": 18,
+    "updated_at": "2026-11-10T16:21:55Z"
   },
   {
     "name": "CuteOtp",
-    "description": "Animated and customizable OTP input for Compose with success/error states, accessibility and SMS Retriever support.",
+    "full_name": "MehdiSekoba/CuteOtp",
+    "description": "Beautiful, animated & customizable OTP input for Android Jetpack Compose.",
     "url": "https://github.com/MehdiSekoba/CuteOtp",
     "image": "https://raw.githubusercontent.com/MehdiSekoba/CuteOtp/main/assert/ui.gif",
     "language": "Kotlin",
     "topics": [
-      "android",
-      "kotlin",
-      "jetpack-compose"
+      "android-development",
+      "material3",
+      "material3-android",
+      "otp",
+      "otp-input"
     ],
-    "stars": null
+    "stars": 13,
+    "updated_at": "2026-11-11T06:07:17Z"
   },
   {
     "name": "MsFeedback",
-    "description": "A ready-to-integrate Material 3 feedback form with image attachments, system information and multilingual RTL support.",
+    "full_name": "MehdiSekoba/MsFeedback",
+    "description": "MsFeedback is an easy-to-integrate Android library that provides a modern, Material 3-based feedback form. It allows users to submit suggestions, bug reports, and general feedback — including text, images, and optional system info — directly via email.",
     "url": "https://github.com/MehdiSekoba/MsFeedback",
     "image": "https://github.com/MehdiSekoba/MsFeedback/blob/main/art/art.jpg?raw=true",
     "language": "Kotlin",
-    "topics": [
-      "android",
-      "kotlin",
-      "material3"
-    ],
-    "stars": null
+    "topics": [],
+    "stars": 1,
+    "updated_at": "2026-10-23T21:48:24Z"
   },
   {
     "name": "IndicatorBottomNavigationView",
-    "description": "Custom BottomNavigationView with an animated selection indicator and Material Design 3 support.",
+    "full_name": "MehdiSekoba/IndicatorBottomNavigationView",
+    "description": "The IndicatorBottomNavigationView library allows you to create a custom BottomNavigationView with an indicator that highlights the selected item.",
     "url": "https://github.com/MehdiSekoba/IndicatorBottomNavigationView",
-    "image": "https://github.com/MehdiSekoba/IndicatorBottomNavigationView/blob/master/app/art/disable.gif?raw=true",
+    "image": "https://jitpack.io/v/MehdiSekoba/IndicatorBottomNavigationView.svg",
     "language": "Kotlin",
     "topics": [
-      "android",
-      "kotlin",
-      "navigation"
+      "bottomnavigationview-shift-mode",
+      "bottomnavigationviewrounded",
+      "custom-bottom-navigation-bar",
+      "indicatorview",
+      "material3-android"
     ],
-    "stars": null
+    "stars": 3,
+    "updated_at": "2026-08-05T21:11:37Z"
   },
   {
     "name": "InfiniteAutoScrollRecyclerView",
-    "description": "Infinite horizontal auto-scrolling RecyclerView supporting list/grid layouts, speed and spacing customization.",
+    "full_name": "MehdiSekoba/InfiniteAutoScrollRecyclerView",
+    "description": "**InfiniteAutoScrollRecyclerView** is a custom RecyclerView implementation for Android that provides automatic infinite horizontal scrolling. It supports both list and grid layouts and allows customization of scroll speed, item margins, and orientation.",
     "url": "https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView",
-    "image": "https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView/blob/main/art/sample.gif?raw=true",
+    "image": "https://jitpack.io/v/MehdiSekoba/InfiniteAutoScrollRecyclerView.svg",
+    "language": "Kotlin",
+    "topics": [],
+    "stars": 0,
+    "updated_at": "2026-09-27T12:53:48Z"
+  },
+  {
+    "name": "Metaball",
+    "full_name": "MehdiSekoba/Metaball",
+    "description": "Android Jetpack Compose library for animated metaball effects. Transforms avatars into liquid banners that connect to the Dynamic Island / display cutout, with stretchy drips, scroll-driven expansion, and image/video compositing.",
+    "url": "https://github.com/MehdiSekoba/Metaball",
+    "image": "https://opengraph.githubassets.com/1/MehdiSekoba/Metaball",
     "language": "Kotlin",
     "topics": [
-      "android",
-      "kotlin",
-      "recyclerview"
+      "animation",
+      "avatar",
+      "banner",
+      "compose-ui",
+      "liquid"
     ],
-    "stars": null
+    "stars": 3,
+    "updated_at": "2026-11-18T07:22:31Z"
   }
 ]
