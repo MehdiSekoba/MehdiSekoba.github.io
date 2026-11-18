@@ -1,20 +1,20 @@
 [
   {
-    "name": "AnimatedBottomBar",
-    "full_name": "MehdiSekoba/AnimatedBottomBar",
-    "description": "A customizable animated bottom navigation bar for Jetpack Compose with smooth floating curved indicator animations.",
-    "url": "https://github.com/MehdiSekoba/AnimatedBottomBar",
-    "image": "https://raw.githubusercontent.com/MehdiSekoba/AnimatedBottomBar/main/ui.gif",
+    "name": "Metaball",
+    "full_name": "MehdiSekoba/Metaball",
+    "description": "Android Jetpack Compose library for animated metaball effects. Transforms avatars into liquid banners that connect to the Dynamic Island / display cutout, with stretchy drips, scroll-driven expansion, and image/video compositing.",
+    "url": "https://github.com/MehdiSekoba/Metaball",
+    "image": "https://opengraph.githubassets.com/1/MehdiSekoba/Metaball",
     "language": "Kotlin",
     "topics": [
-      "bottom-navigation",
-      "compose-ui",
-      "material3-compose-ui",
       "animation",
-      "bottombar"
+      "avatar",
+      "banner",
+      "compose-ui",
+      "liquid"
     ],
-    "stars": 18,
-    "updated_at": "2026-11-10T16:21:55Z"
+    "stars": 3,
+    "updated_at": "2026-11-18T07:22:31Z"
   },
   {
     "name": "CuteOtp",
@@ -34,6 +34,23 @@
     "updated_at": "2026-11-11T06:07:17Z"
   },
   {
+    "name": "AnimatedBottomBar",
+    "full_name": "MehdiSekoba/AnimatedBottomBar",
+    "description": "A customizable animated bottom navigation bar for Jetpack Compose with smooth floating curved indicator animations.",
+    "url": "https://github.com/MehdiSekoba/AnimatedBottomBar",
+    "image": "https://raw.githubusercontent.com/MehdiSekoba/AnimatedBottomBar/main/ui.gif",
+    "language": "Kotlin",
+    "topics": [
+      "bottom-navigation",
+      "compose-ui",
+      "material3-compose-ui",
+      "animation",
+      "bottombar"
+    ],
+    "stars": 18,
+    "updated_at": "2026-11-10T16:21:55Z"
+  },
+  {
     "name": "MsFeedback",
     "full_name": "MehdiSekoba/MsFeedback",
     "description": "MsFeedback is an easy-to-integrate Android library that provides a modern, Material 3-based feedback form. It allows users to submit suggestions, bug reports, and general feedback — including text, images, and optional system info — directly via email.",
@@ -43,6 +60,17 @@
     "topics": [],
     "stars": 1,
     "updated_at": "2026-10-23T21:48:24Z"
+  },
+  {
+    "name": "InfiniteAutoScrollRecyclerView",
+    "full_name": "MehdiSekoba/InfiniteAutoScrollRecyclerView",
+    "description": "**InfiniteAutoScrollRecyclerView** is a custom RecyclerView implementation for Android that provides automatic infinite horizontal scrolling. It supports both list and grid layouts and allows customization of scroll speed, item margins, and orientation.",
+    "url": "https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView",
+    "image": "https://jitpack.io/v/MehdiSekoba/InfiniteAutoScrollRecyclerView.svg",
+    "language": "Kotlin",
+    "topics": [],
+    "stars": 0,
+    "updated_at": "2026-09-27T12:53:48Z"
   },
   {
     "name": "IndicatorBottomNavigationView",
@@ -60,33 +88,5 @@
     ],
     "stars": 3,
     "updated_at": "2026-08-05T21:11:37Z"
-  },
-  {
-    "name": "InfiniteAutoScrollRecyclerView",
-    "full_name": "MehdiSekoba/InfiniteAutoScrollRecyclerView",
-    "description": "**InfiniteAutoScrollRecyclerView** is a custom RecyclerView implementation for Android that provides automatic infinite horizontal scrolling. It supports both list and grid layouts and allows customization of scroll speed, item margins, and orientation.",
-    "url": "https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView",
-    "image": "https://jitpack.io/v/MehdiSekoba/InfiniteAutoScrollRecyclerView.svg",
-    "language": "Kotlin",
-    "topics": [],
-    "stars": 0,
-    "updated_at": "2026-09-27T12:53:48Z"
-  },
-  {
-    "name": "Metaball",
-    "full_name": "MehdiSekoba/Metaball",
-    "description": "Android Jetpack Compose library for animated metaball effects. Transforms avatars into liquid banners that connect to the Dynamic Island / display cutout, with stretchy drips, scroll-driven expansion, and image/video compositing.",
-    "url": "https://github.com/MehdiSekoba/Metaball",
-    "image": "https://opengraph.githubassets.com/1/MehdiSekoba/Metaball",
-    "language": "Kotlin",
-    "topics": [
-      "animation",
-      "avatar",
-      "banner",
-      "compose-ui",
-      "liquid"
-    ],
-    "stars": 3,
-    "updated_at": "2026-11-18T07:22:31Z"
   }
 ]
