@@ -85,71 +85,8 @@
         Reusable Android components focused on polished interaction, modern UI and practical developer experience.
       </p>
 
-      <div class="library-grid">
-        <a class="library-card library-featured" href="https://github.com/MehdiSekoba/AnimatedBottomBar" target="_blank" rel="noreferrer">
-          <div class="library-image">
-            <img src="https://raw.githubusercontent.com/MehdiSekoba/AnimatedBottomBar/main/ui.gif" alt="AnimatedBottomBar demo" loading="lazy" onerror="this.classList.add('image-failed')">
-            <span class="image-badge">JETPACK COMPOSE</span>
-          </div>
-          <div class="library-body">
-            <div class="project-meta"><span>01</span><span>LIBRARY</span></div>
-            <h3>AnimatedBottomBar</h3>
-            <p>Modern Jetpack Compose bottom navigation with a floating curved indicator, smooth transitions, badges and deep customization.</p>
-            <div class="library-footer"><div class="tags"><span>Kotlin</span><span>Compose</span><span>Material 3</span></div><span class="arrow">↗</span></div>
-          </div>
-        </a>
-
-        <a class="library-card" href="https://github.com/MehdiSekoba/CuteOtp" target="_blank" rel="noreferrer">
-          <div class="library-image">
-            <img src="https://raw.githubusercontent.com/MehdiSekoba/CuteOtp/main/assert/ui.gif" alt="CuteOtp demo" loading="lazy" onerror="this.classList.add('image-failed')">
-            <span class="image-badge">COMPOSE</span>
-          </div>
-          <div class="library-body">
-            <div class="project-meta"><span>02</span><span>LIBRARY</span></div>
-            <h3>CuteOtp</h3>
-            <p>Animated and customizable OTP input for Compose with success/error states, accessibility and SMS Retriever support.</p>
-            <div class="library-footer"><div class="tags"><span>Kotlin</span><span>Compose</span></div><span class="arrow">↗</span></div>
-          </div>
-        </a>
-
-        <a class="library-card" href="https://github.com/MehdiSekoba/MsFeedback" target="_blank" rel="noreferrer">
-          <div class="library-image image-contain">
-            <img src="https://github.com/MehdiSekoba/MsFeedback/blob/main/art/art.jpg?raw=true" alt="MsFeedback preview" loading="lazy" onerror="this.classList.add('image-failed')">
-            <span class="image-badge">MATERIAL 3</span>
-          </div>
-          <div class="library-body">
-            <div class="project-meta"><span>03</span><span>LIBRARY</span></div>
-            <h3>MsFeedback</h3>
-            <p>A ready-to-integrate Material 3 feedback form with image attachments, system information and multilingual RTL support.</p>
-            <div class="library-footer"><div class="tags"><span>Android</span><span>Material 3</span></div><span class="arrow">↗</span></div>
-          </div>
-        </a>
-
-        <a class="library-card" href="https://github.com/MehdiSekoba/IndicatorBottomNavigationView" target="_blank" rel="noreferrer">
-          <div class="library-image">
-            <img src="https://github.com/MehdiSekoba/IndicatorBottomNavigationView/blob/master/app/art/disable.gif?raw=true" alt="IndicatorBottomNavigationView preview" loading="lazy" onerror="this.classList.add('image-failed')">
-            <span class="image-badge">ANDROID VIEW</span>
-          </div>
-          <div class="library-body">
-            <div class="project-meta"><span>04</span><span>LIBRARY</span></div>
-            <h3>IndicatorBottomNavigationView</h3>
-            <p>Custom BottomNavigationView with an animated selection indicator and Material Design 3 support.</p>
-            <div class="library-footer"><div class="tags"><span>Kotlin</span><span>Material 3</span></div><span class="arrow">↗</span></div>
-          </div>
-        </a>
-
-        <a class="library-card" href="https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView" target="_blank" rel="noreferrer">
-          <div class="library-image">
-            <img src="https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView/blob/main/art/sample.gif?raw=true" alt="InfiniteAutoScrollRecyclerView preview" loading="lazy" onerror="this.classList.add('image-failed')">
-            <span class="image-badge">RECYCLERVIEW</span>
-          </div>
-          <div class="library-body">
-            <div class="project-meta"><span>05</span><span>LIBRARY</span></div>
-            <h3>InfiniteAutoScrollRecyclerView</h3>
-            <p>Infinite horizontal auto-scrolling RecyclerView supporting list/grid layouts, speed and spacing customization.</p>
-            <div class="library-footer"><div class="tags"><span>Kotlin</span><span>RecyclerView</span></div><span class="arrow">↗</span></div>
-          </div>
-        </a>
+      <div class="library-grid" id="library-grid" aria-live="polite">
+        <p class="section-lead">Loading open-source libraries…</p>
       </div>
     </section>
 
@@ -236,5 +173,46 @@
     <span>© 2026 Mehdi Sekoba</span>
     <div><a href="https://github.com/MehdiSekoba" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mehdi-sekoba/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://mehdisekoba.ir/" target="_blank" rel="noreferrer">mehdisekoba.ir</a></div>
   </footer>
+
+  <script>
+    (async function loadPortfolioLibraries() {
+      const grid = document.getElementById('library-grid');
+      if (!grid) return;
+      try {
+        const response = await fetch('./projects.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('projects.json unavailable');
+        const projects = await response.json();
+        if (!Array.isArray(projects) || projects.length === 0) throw new Error('No projects');
+        grid.replaceChildren();
+        projects.forEach((project, index) => {
+          const card = document.createElement('a');
+          card.className = 'library-card' + (index === 0 ? ' library-featured' : '');
+          card.href = project.url; card.target = '_blank'; card.rel = 'noopener noreferrer';
+          const imageWrap = document.createElement('div'); imageWrap.className = 'library-image';
+          const img = document.createElement('img'); img.alt = project.name + ' preview'; img.loading = 'lazy';
+          img.src = project.image || `https://opengraph.githubassets.com/1/${project.full_name || 'MehdiSekoba/' + project.name}`;
+          img.onerror = () => { img.onerror = null; img.src = `https://opengraph.githubassets.com/1/MehdiSekoba/${encodeURIComponent(project.name)}`; };
+          const badge = document.createElement('span'); badge.className = 'image-badge'; badge.textContent = (project.language || 'OPEN SOURCE').toUpperCase();
+          imageWrap.append(img, badge);
+          const body = document.createElement('div'); body.className = 'library-body';
+          const meta = document.createElement('div'); meta.className = 'project-meta';
+          const number = document.createElement('span'); number.textContent = String(index + 1).padStart(2, '0');
+          const kind = document.createElement('span'); kind.textContent = 'LIBRARY'; meta.append(number, kind);
+          const title = document.createElement('h3'); title.textContent = project.name;
+          const desc = document.createElement('p'); desc.textContent = project.description || 'Open-source Android project. Visit GitHub for details.';
+          const footer = document.createElement('div'); footer.className = 'library-footer';
+          const tags = document.createElement('div'); tags.className = 'tags';
+          (project.topics || []).slice(0, 3).forEach(topic => { const tag = document.createElement('span'); tag.textContent = topic; tags.append(tag); });
+          if (!tags.children.length && project.language) { const tag = document.createElement('span'); tag.textContent = project.language; tags.append(tag); }
+          const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '↗';
+          footer.append(tags, arrow); body.append(meta, title, desc, footer); card.append(imageWrap, body); grid.append(card);
+        });
+      } catch (error) {
+        // Keep the page usable if the generated data cannot be loaded.
+        grid.innerHTML = '<p class="section-lead">Open-source projects are temporarily unavailable. <a href="https://github.com/MehdiSekoba?tab=repositories">Browse all repositories on GitHub ↗</a></p>';
+      }
+    })();
+  </script>
+
 </body>
 </html>
