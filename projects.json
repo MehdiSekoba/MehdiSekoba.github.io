@@ -1,0 +1,67 @@
+[
+  {
+    "name": "AnimatedBottomBar",
+    "description": "Modern Jetpack Compose bottom navigation with a floating curved indicator, smooth transitions, badges and deep customization.",
+    "url": "https://github.com/MehdiSekoba/AnimatedBottomBar",
+    "image": "https://raw.githubusercontent.com/MehdiSekoba/AnimatedBottomBar/main/ui.gif",
+    "language": "Kotlin",
+    "topics": [
+      "android",
+      "kotlin",
+      "jetpack-compose"
+    ],
+    "stars": null
+  },
+  {
+    "name": "CuteOtp",
+    "description": "Animated and customizable OTP input for Compose with success/error states, accessibility and SMS Retriever support.",
+    "url": "https://github.com/MehdiSekoba/CuteOtp",
+    "image": "https://raw.githubusercontent.com/MehdiSekoba/CuteOtp/main/assert/ui.gif",
+    "language": "Kotlin",
+    "topics": [
+      "android",
+      "kotlin",
+      "jetpack-compose"
+    ],
+    "stars": null
+  },
+  {
+    "name": "MsFeedback",
+    "description": "A ready-to-integrate Material 3 feedback form with image attachments, system information and multilingual RTL support.",
+    "url": "https://github.com/MehdiSekoba/MsFeedback",
+    "image": "https://github.com/MehdiSekoba/MsFeedback/blob/main/art/art.jpg?raw=true",
+    "language": "Kotlin",
+    "topics": [
+      "android",
+      "kotlin",
+      "material3"
+    ],
+    "stars": null
+  },
+  {
+    "name": "IndicatorBottomNavigationView",
+    "description": "Custom BottomNavigationView with an animated selection indicator and Material Design 3 support.",
+    "url": "https://github.com/MehdiSekoba/IndicatorBottomNavigationView",
+    "image": "https://github.com/MehdiSekoba/IndicatorBottomNavigationView/blob/master/app/art/disable.gif?raw=true",
+    "language": "Kotlin",
+    "topics": [
+      "android",
+      "kotlin",
+      "navigation"
+    ],
+    "stars": null
+  },
+  {
+    "name": "InfiniteAutoScrollRecyclerView",
+    "description": "Infinite horizontal auto-scrolling RecyclerView supporting list/grid layouts, speed and spacing customization.",
+    "url": "https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView",
+    "image": "https://github.com/MehdiSekoba/InfiniteAutoScrollRecyclerView/blob/main/art/sample.gif?raw=true",
+    "language": "Kotlin",
+    "topics": [
+      "android",
+      "kotlin",
+      "recyclerview"
+    ],
+    "stars": null
+  }
+]

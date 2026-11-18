@@ -1,0 +1,14 @@
+{
+  "owner": "MehdiSekoba",
+  "include_repositories": [
+    "AnimatedBottomBar",
+    "CuteOtp",
+    "MsFeedback",
+    "IndicatorBottomNavigationView",
+    "InfiniteAutoScrollRecyclerView"
+  ],
+  "include_topic": "portfolio",
+  "exclude_repositories": [
+    "MehdiSekoba.github.io"
+  ]
+}
