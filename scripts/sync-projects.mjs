@@ -11,23 +11,83 @@ async function api(url, accept = headers.Accept) {
   if (!res.ok) throw new Error(`GitHub API ${res.status}: ${url}`);
   return res;
 }
-function firstReadmeImage(markdown, repo, branch) {
-  const patterns = [
-    /!\[[^\]]*\]\((https?:\/\/[^\s)]+|[^\s)]+)(?:\s+[^)]*)?\)/i,
-    /<img[^>]+src=["']([^"']+)["']/i
-  ];
-  for (const pattern of patterns) {
-    const match = markdown.match(pattern);
-    if (!match) continue;
-    let url = match[1].replace(/&amp;/g, '&');
-    if (/shields\.io|badge|license/i.test(url)) continue;
-    if (url.startsWith('//')) return `https:${url}`;
-    if (url.startsWith('http')) return url;
-    url = url.replace(/^\.\//, '').replace(/^\//, '');
-    return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${url}`;
-  }
-  return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
+
+function normalizeImageUrl(url, repo, branch) {
+  url = url.replace(/&amp;/g, '&').trim();
+
+  if (url.startsWith('//')) return `https:${url}`;
+  if (/^https?:\/\//i.test(url)) return url;
+
+  url = url.replace(/^\.\//, '').replace(/^\//, '');
+
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${url}`;
 }
+
+function isUsefulImage(path) {
+  if (!/\.(png|jpe?g|webp|gif|avif)$/i.test(path)) return false;
+
+  return !/(badge|license|shield|social-preview|avatar)/i.test(path);
+}
+
+function readmeImages(markdown, repo, branch) {
+  const images = [];
+  const patterns = [
+    /!\[[^\]]*\]\((https?:\/\/[^\s)]+|[^)\s]+)(?:\s+[^)]*)?\)/gi,
+    /<img[^>]+src=["']([^"']+)["']/gi
+  ];
+
+  for (const pattern of patterns) {
+    for (const match of markdown.matchAll(pattern)) {
+      const raw = match[1];
+
+      if (!isUsefulImage(raw)) continue;
+
+      images.push(normalizeImageUrl(raw, repo, branch));
+    }
+  }
+
+  return [...new Set(images)];
+}
+
+async function repositoryImages(repo, branch) {
+  try {
+    const response = await api(
+      `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`
+    );
+
+    const tree = (await response.json()).tree || [];
+
+    const preferredFolders = [
+      'art/',
+      'assets/',
+      'screenshots/',
+      'images/',
+      'demo/'
+    ];
+
+    const files = tree
+      .filter(item => item.type === 'blob' && isUsefulImage(item.path))
+      .sort((a, b) => {
+        const score = path => {
+          const lower = path.toLowerCase();
+          const index = preferredFolders.findIndex(folder =>
+            lower.startsWith(folder)
+          );
+          return index === -1 ? 999 : index;
+        };
+
+        return score(a.path) - score(b.path);
+      });
+
+    return files.map(file =>
+      `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${file.path}`
+    );
+  } catch (error) {
+    console.warn(`Could not scan images for ${repo}:`, error.message);
+    return [];
+  }
+}
+
 const reposRes = await api(`https://api.github.com/users/${owner}/repos?per_page=100&type=owner&sort=updated`);
 const repos = await reposRes.json();
 const includeNames = new Set(config.include_repositories || []);
