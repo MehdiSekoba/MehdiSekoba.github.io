@@ -56,7 +56,8 @@ for (const repo of repos) {
     language: repo.language || 'Open Source',
     topics: topics.slice(0, 5),
     stars: repo.stargazers_count,
-    updated_at: repo.updated_at
+    updated_at: repo.updated_at,
+    created_at: repo.created_at,
   });
 }
 selected.sort((a, b) => {
