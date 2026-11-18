@@ -60,10 +60,7 @@ for (const repo of repos) {
   });
 }
 selected.sort((a, b) => {
-  const ai = (config.include_repositories || []).indexOf(a.name);
-  const bi = (config.include_repositories || []).indexOf(b.name);
-  if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
-  return new Date(b.updated_at) - new Date(a.updated_at);
+  return new Date(b.created_at) - new Date(a.created_at);
 });
 const fs = await import('node:fs/promises');
 await fs.writeFile('projects.json', JSON.stringify(selected, null, 2) + '\n');
