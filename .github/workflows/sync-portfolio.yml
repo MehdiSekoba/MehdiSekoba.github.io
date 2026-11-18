@@ -1,1 +1,38 @@
 
+name: Sync portfolio projects
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+  push:
+    paths:
+      - "portfolio.config.json"
+      - "scripts/sync-projects.mjs"
+      - ".github/workflows/sync-portfolio.yml"
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Discover and sync repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-projects.mjs
+      - name: Commit updated project data
+        run: |
+          if [[ -n "$(git status --porcelain projects.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add projects.json
+            git commit -m "chore: sync portfolio projects"
+            git push
+          else
+            echo "Portfolio projects are already up to date."
+          fi
